@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText n1, n2, n3;
+    private EditText n1, n2;
+    private RadioButton rb1, rb2;
     private TextView resultado;
     private String defaultText;
     @Override
@@ -21,24 +23,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         n1 = (EditText)findViewById(R.id.n1);
         n2 = (EditText)findViewById(R.id.n2);
-        n3 = (EditText) findViewById(R.id.n3);
+        rb1 = (RadioButton)findViewById(R.id.rb1);
+        rb2 = (RadioButton)findViewById(R.id.rb2);
         resultado = (TextView) findViewById(R.id.resultado);
-        defaultText = resultado.getText().toString();
+        defaultText = resultado.getText().toString();        
+        
     }
 
     public void click(View view){
-        int v1 = Integer.parseInt(n1.getText().toString());
-        int v2 = Integer.parseInt(String.valueOf(n2.getText()));
-        int v3 = Integer.parseInt(n3.getText().toString());
-
-        ;
-        int finalNote = (v1+v2+v3)/3;
-        String resultado = String.valueOf(finalNote);
-        if(finalNote >=6){
-            this.resultado.setText(defaultText + ": Aprobado " + resultado);
-        }else{
-            this.resultado.setText(defaultText + ": Reprobado " + resultado);
+        int value1 = Integer.parseInt(n1.getText().toString());
+        int value2 = Integer.parseInt(n2.getText().toString());
+        int resultado;
+        if(rb1.isChecked()){
+            resultado = value1 + value2;
+            this.resultado.setText(defaultText + ": " + String.valueOf(resultado));
         }
+        if (rb2.isChecked()){
+            resultado = value1 - value2;
+            this.resultado.setText(defaultText + ": " + String.valueOf(resultado));
+        }
+
+        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
 
     }
 
