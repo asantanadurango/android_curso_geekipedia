@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mi Primer App</string>
     <string name="text_resultado">Resultado</string>
-    <string name="calcular">Calcular</string>
-    <string name="text_n1">#1</string>
-    <string name="text_n2">#2</string>
+    <string name="text_btn">Mostrar</string>
+    <string name="text_n1">Nombre</string>
+    <string name="text_n2">Edad</string>
 </resources>
