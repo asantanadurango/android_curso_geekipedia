@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">Mi Primer App</string>
     <string name="text_resultado">Resultado</string>
-    <string name="text_btn">Mostrar</string>
-    <string name="text_n1">Nombre</string>
-    <string name="text_n2">Edad</string>
+    <string name="text_btn">Calcular</string>
+    <string name="text_n1">#1</string>
+    <string name="text_n2">#2</string>
+    <string-array name="items">
+        <item >Sumar</item>
+        <item >Restar</item>
+        <item >Multiplicar</item>
+        <item >Dividir</item>
+        </string-array>
+    <string name="test">tets</string>
 </resources>
